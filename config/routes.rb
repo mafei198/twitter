@@ -1,10 +1,10 @@
 Twitter::Application.routes.draw do
 
-  get "users/new"
+  resources :users
 
   match '/help' => 'pages#help'
   match '/about' => 'pages#about'
-  match '/signup' => 'pages#signup'
+  match '/signup' => 'users#new'
   match '/contact' => 'pages#contact'
 
   root :to => "pages#home"

@@ -4,6 +4,9 @@ gem 'rails', '3.0.5'
 
 group :development do
   gem 'rspec-rails'
+  gem 'annotate-models'
+  gem 'gravatar_image_tag', '0.1.0'
+
 end
 
 group :test do
