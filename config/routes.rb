@@ -1,10 +1,14 @@
 Twitter::Application.routes.draw do
 
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match '/signin',  :to => 'sessions#new'
+  match '/signup',  :to => 'users#new'
+  match '/signout', :to => 'sessions#destroy'
 
   match '/help' => 'pages#help'
   match '/about' => 'pages#about'
-  match '/signup' => 'users#new'
   match '/contact' => 'pages#contact'
 
   root :to => "pages#home"
