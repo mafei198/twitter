@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     else
       flash[:success] = "Welcome to Twitter!"
       sign_in user
-      redirect_to current_user
+      redirect_back_or user
     end
   end
 
